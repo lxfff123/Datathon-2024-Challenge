@@ -13,12 +13,9 @@ Gilead Sciences is the sponsor for this year’s [WiDS Datathon](https://www.wid
 We need to predict whether a patient will be diagnosed with metastatic cancer within 90 days after screening.
 To accomplish this task, we compared different models, including: logistic regression, random forest, gradient boosting, etc., and finally used the model with the best performance.
 
-
 # Model Evaluation Report
 
 This our report summarizes the evaluation of two classification models: **Gradient Boosting Classifier** and **CatBoost Classifier**. The performance metrics measured include **Precision**, **Recall**, **F1 Score**, **ROC AUC**, and **AUC-PR**. Additionally, feature importance scores and SHAP values were assessed for both models.
-
-## Model Evaluation
 
 ### Gradient Boosting Classifier
 - **Precision**: 0.7903
@@ -68,11 +65,14 @@ This our report summarizes the evaluation of two classification models: **Gradie
 | num__patient_race_Other | 0.0416 |
 | num__patient_race_White | 1.0804 |
 
+![Model Evaluation Chart](Images/2.1.png)
+![Model Evaluation Chart](Images/2.2.png)
+![Model Evaluation Chart](Images/2.3.png)
+
 ### Conclusion
 Both classifiers demonstrate strong predictive performance, with CatBoost having a slight edge in ROC AUC and AUC-PR metrics. Additionally, CatBoost appears to scale feature importance values significantly higher than Gradient Boosting, potentially due to differences in model architecture and how each model handles feature thresholds.
 
-
-### Why is This Important?
+### Why is this project important?
 
 Metastatic Triple-Negative Breast Cancer (TNBC) is considered the most aggressive form and requires urgent treatment. Delays in diagnosis and treatment can have devastating effects. Differences in wait times for treatment serve as a proxy for disparities in healthcare access. The primary goal is to detect relationships between patient demographics and the likelihood of timely treatment. The secondary goal is to assess whether environmental hazards impact proper diagnosis and treatment.
 

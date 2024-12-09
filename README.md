@@ -13,7 +13,6 @@ Gilead Sciences is the sponsor for this year’s [WiDS Datathon](https://www.wid
 We need to predict whether a patient will be diagnosed with metastatic cancer within 90 days after screening.
 To accomplish this task, we compared different models, including: logistic regression, random forest, gradient boosting, etc., and finally used the model with the best performance.
 
-
 ### Why is This Important?
 
 Metastatic Triple-Negative Breast Cancer (TNBC) is considered the most aggressive form and requires urgent treatment. Delays in diagnosis and treatment can have devastating effects. Differences in wait times for treatment serve as a proxy for disparities in healthcare access. The primary goal is to detect relationships between patient demographics and the likelihood of timely treatment. The secondary goal is to assess whether environmental hazards impact proper diagnosis and treatment.

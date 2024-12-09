@@ -42,6 +42,10 @@ This our report summarizes the evaluation of two classification models: **Gradie
 | num__patient_race_Other | 0.0002 |
 | num__patient_race_White | 0.0013 |
 
+![Model Evaluation Chart](Images/1.1.png)
+![Model Evaluation Chart](Images/1.2.png)
+![Model Evaluation Chart](Images/1.3.png)
+
 ### CatBoost Classifier
 - **Precision**: 0.7903
 - **Recall**: 0.9604
@@ -66,10 +70,6 @@ This our report summarizes the evaluation of two classification models: **Gradie
 
 ### Conclusion
 Both classifiers demonstrate strong predictive performance, with CatBoost having a slight edge in ROC AUC and AUC-PR metrics. Additionally, CatBoost appears to scale feature importance values significantly higher than Gradient Boosting, potentially due to differences in model architecture and how each model handles feature thresholds.
-
-## Images
-## Images
-![Model Evaluation Chart](Images/1.1.png)
 
 
 ### Why is This Important?

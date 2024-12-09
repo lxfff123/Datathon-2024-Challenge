@@ -68,7 +68,8 @@ This our report summarizes the evaluation of two classification models: **Gradie
 Both classifiers demonstrate strong predictive performance, with CatBoost having a slight edge in ROC AUC and AUC-PR metrics. Additionally, CatBoost appears to scale feature importance values significantly higher than Gradient Boosting, potentially due to differences in model architecture and how each model handles feature thresholds.
 
 ## Images
-![Images/1.1.png](model_evaluation.png)
+## Images
+![Model Evaluation Chart](Images/1.1.png)
 
 
 ### Why is This Important?

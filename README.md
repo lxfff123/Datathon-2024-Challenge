@@ -1,32 +1,25 @@
-# AGV Camera Server
+sequenceDiagram
+    autonumber
+    actor User as 实验员
+    participant RDS as "RDS (调度系统)"
+    participant Board as "板子 (平板屏端)"
+    participant PLC as "PLC (车厢门控)"
 
-## 项目简介
-AGV视觉智能监控服务器，基于YOLO11行人检测 + Flask + Gevent + MQTT实现。
-用于接收AGV小车摄像头视频流，实时检测行人，自动下发报警指令，实现AGV视觉安全防护。
+    Note over User, PLC: 📍 阶段一：小车到达与身份验证
+    RDS->>Board: 发送【到达站点】信号
+    Note over Board: 唤醒并开启人脸识别
+    User->>Board: 实验员正对屏幕进行人脸识别
+    Note over Board: 特征比对 (匹配成功)
+    Board->>PLC: 发送【开门】指令
+    Note over PLC: 执行物理开门动作
 
-## 核心功能
-- 接收摄像头视频流（ImageZMQ）
-- 实时AI行人检测（YOLO11，支持GPU加速）
-- ROI区域智能检测，过滤无效目标
-- 检测到行人后自动通过MQTT发送报警指令
-- 双路自动录像（全段录像 + 仅行人录像）
-- 按小时自动切分、自动归档
-- Web页面实时查看监控画面
-- MQTT设备状态同步
+    Note over User, PLC: 📦 阶段二：取物与物理状态反馈
+    User->>PLC: 拿取物品后，手动将门关上
+    PLC->>Board: 发送【门关到位】信号
+    Note over Board: 锁定系统，暂停人脸识别
 
-## 端口配置
-- Web 监控界面：5016
-- 视频流接收：5555
-- MQTT 通信：1884
-
-## 录像保存路径
-E:\records\[设备ID]\[日期]\
-E:\records\[设备ID]\[日期]\person\
-
-## 启动命令
-python server_recordzzb.py
-
-## MQTT 协议
-订阅：amb/+/status
-推送报警：amb/{设备ID}/cmd
-报警内容：ALERT
+    Note over User, PLC: 🚀 阶段三：选择目的地与发车
+    Note over Board: 屏幕弹出/激活【选择下一站】界面
+    User->>Board: 在屏幕上点击选择下一站点
+    Board->>RDS: 发送【前往目标站点】指令
+    Note over RDS: 接收指令，控制AGV小车驶离当前站

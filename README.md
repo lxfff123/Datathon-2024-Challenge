@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
     autonumber
     actor User as 实验员
@@ -23,3 +24,4 @@ sequenceDiagram
     User->>Board: 在屏幕上点击选择下一站点
     Board->>RDS: 发送【前往目标站点】指令
     Note over RDS: 接收指令，控制AGV小车驶离当前站
+```
